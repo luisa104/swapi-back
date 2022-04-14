@@ -1,0 +1,20 @@
+[flake8]
+exclude =
+    .git,
+    .gitignore,
+    *.pot,
+    *.py[co],
+    __pycache__,
+    */migrations/*,
+    manage.py,
+    extras,
+    fixture
+
+
+ignore = E121,E123,E126,E226,E24,E704,E128
+
+
+max-line-length = 120
+show-source = True
+count = True
+statistics = True
