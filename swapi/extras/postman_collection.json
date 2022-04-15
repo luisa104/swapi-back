@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2a577f04-344f-46d1-ad9c-efb5bad8743f",
+		"_postman_id": "d3bb51e6-0886-4ae6-98fa-1b1b2393e346",
 		"name": "SWAPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -16,7 +16,7 @@
 				"body": {
 					"mode": "graphql",
 					"graphql": {
-						"query": "{\n    allPeople{\n        edges{\n            node{\n                name,\n                gender,\n                height,\n                mass,\n                hairColor,\n                skinColor,\n                eyeColor,\n                birthYear,\n                homeWorld{\n                    name\n                }\n            }\n        }\n    }\n}",
+						"query": "{\n    allPeople{\n        edges{\n            node{\n                name,\n                gender,\n                height,\n                mass,\n                hairColor,\n                skinColor,\n                eyeColor,\n                birthYear,\n                homeWorld{\n                    id\n                    name\n                }\n            }\n        }\n    }\n}",
 						"variables": ""
 					}
 				},
@@ -178,7 +178,7 @@
 				"body": {
 					"mode": "graphql",
 					"graphql": {
-						"query": "mutation addNewPlanet{\n    addPlanet(input:{name: \"Exodeen\"}){\n        planet{\n            id,\n            name\n        }\n    }\n}",
+						"query": "mutation addNewPlanet{\n    addUpdatePlanetMutation(input:{name: \"Tatooine\", rotationPeriod: \"23\", orbitalPeriod: \"304\", diameter: \"10465\", climate: \"arid\", gravity: \"1 standard\", terrain: \"desert\", surfaceWater: \"1\", population: \"200000\"}){\n        planet{\n            id,\n            name,\n            rotationPeriod,\n            orbitalPeriod,\n            diameter,\n            climate,\n            gravity,\n            terrain,\n            surfaceWater,\n            population\n        }\n    }\n}",
 						"variables": ""
 					}
 				},
@@ -208,127 +208,7 @@
 				"body": {
 					"mode": "graphql",
 					"graphql": {
-						"query": "mutation addNewPlanet{\n    addPlanet(input:{name: \"Tatooine\", id:\"UGxhbmV0Tm9kZTox\"}){\n        planet{\n            id,\n            name\n        }\n    }\n}",
-						"variables": ""
-					}
-				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/graphql/",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"graphql",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add Director",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "graphql",
-					"graphql": {
-						"query": "mutation addNewDirector{\n    addDirector(input:{name: \"J.J. Abrams\"}){\n        director{\n            id,\n            name\n        }\n    }\n}",
-						"variables": ""
-					}
-				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/graphql/",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"graphql",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Director",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "graphql",
-					"graphql": {
-						"query": "mutation addNewDirector{\n    addDirector(input:{name: \"J.J. Abrams\", id:\"RGlyZWN0b3JOb2RlOjU=\"}){\n        director{\n            id,\n            name\n        }\n    }\n}",
-						"variables": ""
-					}
-				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/graphql/",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"graphql",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add Producer",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "graphql",
-					"graphql": {
-						"query": "mutation addNewProducer{\n    addProducer(input:{name: \"J.J. Abrams\"}){\n        producer{\n            id,\n            name\n        }\n    }\n}",
-						"variables": ""
-					}
-				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/graphql/",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"graphql",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Producer",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "graphql",
-					"graphql": {
-						"query": "mutation addNewProducer{\n    addProducer(input:{name: \"J.J. Abrams\", id:\"UHJvZHVjZXJOb2RlOjY=\"}){\n        producer{\n            id,\n            name\n        }\n    }\n}",
+						"query": "mutation UpdatePlanet{\n    addUpdatePlanetMutation(input:{id: \"UGxhbmV0VHlwZTo2Mw==\", name: \"Tatooine\", rotationPeriod: \"23\", orbitalPeriod: \"304\", diameter: \"10465\", climate: \"arid\", gravity: \"1 standard\", terrain: \"desert\", surfaceWater: \"1\", population: \"200000\"}){\n        planet{\n            id,\n            name,\n            rotationPeriod,\n            orbitalPeriod,\n            diameter,\n            climate,\n            gravity,\n            terrain,\n            surfaceWater,\n            population\n        }\n    }\n}",
 						"variables": ""
 					}
 				},
@@ -358,7 +238,7 @@
 				"body": {
 					"mode": "graphql",
 					"graphql": {
-						"query": "mutation addNewPeople{\n    addPeople(input:{name: \"Kylo Ren\", gender: \"male\", height: \"189\", mass: \"89\", hairColor: \"black\", eyeColor: \"brown\", skinColor: \"light\", birthYear: \"5ABY\", homeWorldId: 32}){\n        people{\n            id,\n            name,\n            gender,\n            height,\n            mass,\n            hairColor,\n            eyeColor, \n            skinColor, \n            birthYear\n            homeWorld{\n                name,\n            }\n        }\n    }\n}",
+						"query": "mutation addNewPeople{\n    addUpdatePeopleMutation(input:{name: \"Kylo Ren\", gender: \"male\", height: \"189\", mass: \"89\", hairColor: \"black\", eyeColor: \"brown\", skinColor: \"light\", birthYear: \"5ABY\", homeWorld: \"UGxhbmV0VHlwZToz\"}){\n        people{\n            id,\n            name,\n            gender,\n            height,\n            mass,\n            hairColor,\n            eyeColor,\n            skinColor,\n            birthYear\n            homeWorld{\n                name,\n            }\n        }\n    }\n}",
 						"variables": ""
 					}
 				},
@@ -388,7 +268,7 @@
 				"body": {
 					"mode": "graphql",
 					"graphql": {
-						"query": "mutation addNewPeople{\n    addPeople(input:{id: \"UGVvcGxlTm9kZTo4OA==\", name: \"Kylo Ren\", gender: \"male\", height: \"189\", mass: \"89\", hairColor: \"black\", eyeColor: \"brown\", skinColor: \"light\", birthYear: \"5ABY\", homeWorldId: 32}){\n        people{\n            id,\n            name,\n            gender,\n            height,\n            mass,\n            hairColor,\n            eyeColor,\n            skinColor,\n            birthYear\n            homeWorld{\n                name,\n            }\n        }\n    }\n}",
+						"query": "mutation UpdatePeople{\n    addUpdatePeopleMutation(input:{id: \"UGVvcGxlVHlwZTo4OQ==\", name: \"Kylo Ren\", gender: \"male\", height: \"189\", mass: \"89\", hairColor: \"black\", eyeColor: \"brown\", skinColor: \"light\", birthYear: \"5ABY\", homeWorld: \"UGxhbmV0VHlwZToz\"}){\n        people{\n            id,\n            name,\n            gender,\n            height,\n            mass,\n            hairColor,\n            eyeColor,\n            skinColor,\n            birthYear\n            homeWorld{\n                name,\n                id\n            }\n        }\n    }\n}",
 						"variables": ""
 					}
 				},
@@ -411,14 +291,17 @@
 			"response": []
 		},
 		{
-			"name": "Add Film",
+			"name": "Filters All People",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [],
 				"body": {
 					"mode": "graphql",
 					"graphql": {
-						"query": "mutation addNewFilm{\n    addFilm(input:{title:\"The Rise of Skywalker\", episodeId:9, openingCrawl: \"In a galaxy far far away...\", releaseDate:\"2019-12-20\", director: 4, producer: [{name:\"J.J. Abrams\"}]}){\n        film{\n            id,\n            episodeId,\n            openingCrawl,\n            releaseDate,\n            director{\n                name\n            },\n            producer{\n                edges{\n                    node{\n                        name\n                    }\n                }\n            }\n        }\n    }\n}",
+						"query": "query {\n  allPeople(gender: \"male\"){\n    edges {\n      node {\n        id\n        name\n        gender\n      }\n    }\n  }\n}",
 						"variables": ""
 					}
 				},
@@ -440,6 +323,5 @@
 			},
 			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
