@@ -43,7 +43,7 @@ class AddUpdatePeopleMutation(graphene.relay.ClientIDMutation):
         skin_color = graphene.String(requiere=False)
         eye_color = graphene.String(require=False)
         birth_year = graphene.String(require=False)
-        gender = graphene.String(require=True)
+        gender = graphene.String(require=False)
         home_world = graphene.String(require=True)
 
     people = graphene.Field(PeopleType)

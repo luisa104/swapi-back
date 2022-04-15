@@ -12,29 +12,17 @@
 
 Clone the project
 ```
-git clone https://github.com/gustav0/swapi.git
+git clone https://github.com/luisa104/swapi-back.git
 ```
 
-Move into de repo and install dependencies
-```
-pip install -r requirements.txt
-```
 
-Run migrations and load fixtures
+### Runing in docker
 ```
-python manage.py migrate
-python manage.py load_fixtures
+docker build .
+docker-compose build
+docker-compose up
 ```
-
-### Running the server
+### Created super user
 ```
-python manage.py runserver
-```
-If you want to check it out, access the graphi explorer here: `127.0.0.1:8000/explore`.
-
-The service should be available in the URL: `127.0.0.1:8000/graphql`.
-
-### Runing the tests
-```
-python manage.py test
+docker-compose run app  sh -c "python manage.py createsuperuser"
 ```
